@@ -1,0 +1,15 @@
+@Test
+public void testBStack TakeScreenShot()throws Exception{
+webDriver driver;
+System.setProperty("webdriver.chrome.driver" , "path");
+driver = new chromedriver();
+driver.get("path");
+this.takeSnapShot("ScreenShot path");
+}
+public static void takeSnapShot(webDriver webdriver , String fileWithPath) throws Exception{
+TakesScreenshot scrShot = ((TakesScreenshot)webdriver);
+File SrcFile = scrShot.getScreenshotAs(outputType.FILE);
+File DestFile=new File(fileWithPath);
+FileUtils.copyFile(SrcFile,DestFile);
+}
+}
